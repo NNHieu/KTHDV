@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Khung được tạo bởi https://www.liquid-technologies.com -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="student">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="sid"> <!-- sid: chuỗi 8 chữ số-->
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[0-9]{8}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        
+        <!-- https://www.w3schools.com/xml/schema_facets.asp -->
+        <xs:element name="name">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="first" type="xs:string" />
+              <xs:element name="last" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- https://www.w3schools.com/xml/schema_dtypes_date.asp -->
+        <xs:element name="dob" type="xs:date" /> <!-- dob: định dạng YYYY-MM-DD -->
+
+        <!-- https://www.w3schools.com/xml/schema_facets.asp -->
+        <xs:element name="gender"> <!-- gender: chọn một trong hai giá trị Male hoặc Female -->
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Male"/>
+              <xs:enumeration value="Female"/>
+            </xs:restriction>
+          </xs:simpleType>  
+        </xs:element>
+
+        <xs:element name="emails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vnu_email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^@]+@vnu\.edu\.vn"/> <!-- http://www.zvon.org/xxl/XMLSchemaTutorial/Output/ser_types_st4.html -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="other_email" minOccurs="0"> <!-- other_email: có thể có hoặc không -->
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^@]+@[^\.]+\..+"/> 
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- https://www.w3schools.com/xml/schema_complex_indicators.asp -->
+        <xs:element name="contacts"> <!--  contacts: có ít nhất một contact, nhiều nhất là hai contact -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="2" name="contact"> <!-- The default value for minOccurs is 1 -->
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="contact_name" type="xs:string" />
+                    <xs:element name="contact_addr" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

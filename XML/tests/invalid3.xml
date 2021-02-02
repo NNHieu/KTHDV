@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<student>
+    <sid>1234567</sid>
+    <name>
+        <first>Binh</first>
+        <last>Nguyen</last>
+    </name>
+    <dob>2000-05-</dob>
+    <gender>M</gender>
+    <emails>
+        <vnu_email>binhn@vnu.vn</vnu_email>
+        <other_email>binh@.com</other_email>
+    </emails>
+    <contacts>
+        <contact>
+            <contact_name>asdf</contact_name>
+            <contact_addr>fasdf</contact_addr>
+        </contact>
+        <contact>
+            <contact_name>qwer</contact_name>
+            <contact_addr>qwerqwer</contact_addr>
+        </contact>
+    </contacts>
+</student>	

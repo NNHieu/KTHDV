@@ -38,7 +38,7 @@ public class HelloServer implements Pair{
     public static void main(String[] args) {
         try{
             HelloServer obj = new HelloServer();
-            Pair stub = (Pair) UnicastRemoteObject.exportObject(obj, 0);
+            Pair stub = (Pair) UnicastRemoteObject.exportObject(obj, 1099);
 
             Registry registry = LocateRegistry.getRegistry();
             registry.bind("Pair", stub);

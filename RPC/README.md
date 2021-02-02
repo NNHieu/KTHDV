@@ -9,7 +9,7 @@
 
 1. Compile code:
 
-> javac -d bin example/hello/Pair.java example/hello/HelloServer.java example/hello/ HelloClient.java
+> javac -d bin example/hello/Pair.java example/hello/HelloServer.java example/hello/HelloClient.java
 
 
 2. Run rmiregistry ở thư mục `bin`
