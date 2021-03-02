@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            h1
+            { 
+                color:green;
+            text-decoration:yellow;
+            }
+        </style>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+<body>
+
+<label for="cars">Choose a student:</label>
+<select name="cars" id="cars">
+    <option value="all">All</option>
+</select>
+<table>
+</body>
+<script>
+    axios.get('http://127.0.0.1:5000/api/getinfo?sid=all').then(
+        res =>{
+            data = res.data
+            for (const [key, value] of Object.entries(data)) {
+                document.querySelector('select').innerHTML += `
+                    <option value="${key}">${key} - ${value["name"]["first"]} ${value["name"]["last"]}</option>
+                `
+            }
+        }
+    )
+    
+    parseStudentData = (student) => `
+                    <h1>Student ${student['sid']}</h1>
+                    <hr/>
+                    <form id="form1" autocomplete="off">
+                        Student Name: ${student["name"]["first"]} ${student["name"]["last"]}
+                        <br/> <br/>
+                        Student DoB: ${student["dob"]}
+                        <br/> <br/>
+                        Student Gender: ${student["gender"]}
+                        <br/> <br/>
+                        Address: ${student["contacts"]["contact_addr"]}
+                        <br/> <br/>
+                        VNU Email: ${student["emails"]["vnu_mail"]}
+                        <br/> <br/>
+                        Other Email: ${student["emails"]["other_mail"]}
+                    </form><br/>
+                `
+    selector = document.querySelector('select')
+    selector.onchange = () => axios.get(`http://127.0.0.1:5000/api/getinfo?sid=${document.querySelector('select').value}`).then(
+        res =>{
+                data = res.data
+                console.log(data)
+                table = document.querySelector('table')
+                table.innerHTML = ''
+                for (const [key, value] of Object.entries(data)) {
+                    table.innerHTML += parseStudentData(value)
+                }
+            }
+        )
+    selector.onchange()
+</script>
+</html>
+
