@@ -18,7 +18,6 @@ if __name__ == '__main__':
         response = requests.get(f'http://127.0.0.1:5000/api/getinfo?sid={sys.argv[1]}').json()
     else:
         response = requests.get('http://127.0.0.1:5000/api/getinfo').json()
-    print(response)
     for sid, student in response.items():
         print(f'---------Student {sid}---------')
         print_student(student)
