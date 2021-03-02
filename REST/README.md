@@ -31,10 +31,10 @@ VD Response:
     
 ## Ảnh
 
-![](/imgs/py_all.png)
-![](/imgs/py_1.png)
-![](/imgs/web_all.png)
-![](/imgs/web_1.png)
+![](./imgs/py_all.png)
+![](./imgs/py_1.png)
+![](./imgs/web_all.png)
+![](./imgs/web_1.png)
 
 
 
