@@ -25,6 +25,7 @@ VD Response:
 2. Chạy các command sau để khởi động server:
     * export FLASH_APP=app.py
     * export FLASH_ENV=development
+    * flask run
 3. Chạy client:
     * Web client: Truy cập đến 127.0.0.1:5000 (hoặc port khi run flask)
     * Desktop client: Chạy command: `python py_client all` hoặc `python py_client 18020510`
