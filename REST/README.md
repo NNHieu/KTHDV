@@ -1,5 +1,10 @@
 # REST API
 
+## Thành viên
+* Nguyễn Lê Hoàng - 18020543
+* Nguyễn Hữu Lộc - 18020779
+* Nguyễn Ngọc Hiếu - 18020510
+
 ## APIs
 ### Get student info
 
