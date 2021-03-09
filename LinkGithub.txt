@@ -1,1 +1,1 @@
-https://github.com/NNHieu/KTHDV/tree/master/REST
+https://github.com/NNHieu/KTHDV/tree/master/gRPC

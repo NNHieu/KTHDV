@@ -33,18 +33,18 @@ var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 
 data = [
   {
-    "dob": "29/10/2000",
-    "sid": '18020543',
-    "gender": "Male",
-    "contacts": {
-      "contact_addr": "Hanoi",
-      "contact_name": "Nguyen Le Hoang"
+    sid: "18020543",
+    dob: "29/10/2000",
+    gender: "Male",
+    name: {
+      first: "Hoang",
+      last: "Nguyen Le"
     },
-    "name": {
-      "first": "Hoang",
-      "last": "Nguyen Le"
+    contact: {
+      contact_addr: "Hanoi",
+      contact_name: "Nguyen Le Hoang"
     },
-    "emails": {
+    emails: {
       "other_mail": "hoangnl2000@gmail.com",
       "vnu_mail": "18020543@vnu.edu.vn"
     }
@@ -53,7 +53,7 @@ data = [
     "dob": "04/12/2000",
     "sid": '18020779',
     "gender": "Male",
-    "contacts": {
+    "contact": {
       "contact_addr": "Ha Noi",
       "contact_name": "Nguyen Huu Loc"
     },
@@ -82,7 +82,7 @@ data = [
       vnu_mail: "18020510@vnu.edu.vn",
       other_mail: ''
     }
-  }
+  },
 ]
 
 /**
